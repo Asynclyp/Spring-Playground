@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-class GameConfiguration {
+public class App03GamingSpring {
+
     @Bean
     @Qualifier("mario")
     public GameConsole mario(){
@@ -29,11 +30,8 @@ class GameConfiguration {
         return new GameRunner(mario);
     }
 
-}
-
-public class App03GamingSpring {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(GameConfiguration.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App03GamingSpring.class);
 
         GameRunner pacmanRunner = new GameRunner(context.getBean("pacman", GameConsole.class));
         pacmanRunner.run();
