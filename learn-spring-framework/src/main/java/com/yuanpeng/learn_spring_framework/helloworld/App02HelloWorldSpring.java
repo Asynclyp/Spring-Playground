@@ -1,4 +1,4 @@
-package com.yuanpeng.learn_spring_framework;
+package com.yuanpeng.learn_spring_framework.helloworld;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,5 +12,7 @@ public class App02HelloWorldSpring {
         System.out.println(context.getBean("person4Parameters"));
 
         System.out.println(context.getBean("person5Qualifier"));
+
+        System.out.println(context.getBean(Address.class));
     }
 }
