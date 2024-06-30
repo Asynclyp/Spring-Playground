@@ -5,12 +5,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
 @Configuration
-@Component
+@Service
 @ComponentScan
 public class BusinessCalculationService {
     private DataService dataService;
@@ -26,7 +26,7 @@ public class BusinessCalculationService {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(BusinessCalculationService.class);
-//        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
         BusinessCalculationService service = context.getBean(BusinessCalculationService.class);
         System.out.println(service.findMax());
     }
